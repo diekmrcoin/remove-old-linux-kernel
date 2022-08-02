@@ -32,8 +32,9 @@ BOOTUSAGE=$(df -h | grep -E /boot$ | awk '{print $5}')
 echo -e "Usage of /boot after the uninstall: $BOOTUSAGE\n"
 
 read -p "Do you want to execute auto-remove to clean the headers? (y/n)" PROCEED
-if [ "$PROCEED" == "y" ]; then
-    apt-get autoremove
+if [ "$PROCEED" != "y" ]; then
+    echo "Aborting"
+    exit 2
 fi
 
 apt autoremove
