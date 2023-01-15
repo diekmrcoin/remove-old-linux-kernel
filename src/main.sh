@@ -20,8 +20,8 @@ echo -e "Kernels available:\n$KERNELLIST\n"
 KERNELSTOUNINSTALL=$(echo -e "$KERNELLIST" | tail -n $AMOUNT)
 echo -e "Kernels to uninstall:\n$KERNELSTOUNINSTALL\n"
 
-read -p "Proceed? (y/n)" PROCEED
-if [ "$PROCEED" != "y" ]; then
+read -p "Proceed? (yes/n)" PROCEED
+if [ "$PROCEED" != "yes" ]; then
     echo "Aborting"
     exit 1
 fi
